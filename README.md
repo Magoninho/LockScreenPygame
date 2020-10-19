@@ -1,2 +1,4 @@
-# PygameRelax
-An experiment I made using pygame 
+# LockScreenPygame
+A lock screen to... lock your screen. 
+
+Press ESC do exit it

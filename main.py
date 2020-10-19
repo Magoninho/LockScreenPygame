@@ -15,13 +15,15 @@ def main():
 	white = (255, 255, 255)
 	black = (0,0,0)
 	red = (255, 0, 0)
-	largura, altura = 1980, 1080
+	info_res = pygame.display.Info()
 
-	screen = pygame.display.set_mode((largura, altura))
+	largura, altura = info_res.current_w, info_res.current_h
+
+	screen = pygame.display.set_mode((largura, altura), pygame.FULLSCREEN)
 	caption = pygame.display.set_caption("cool")
 
 
-	angle = random.randint(0, 45)
+	angle = random.randint(45, 90)
 
 
 	# posisão das estrelas
@@ -46,20 +48,24 @@ def main():
 	]
 
 	pygame.mixer.init()
-	pygame.mixer.music.load('./call-me.wav')
+	pygame.mixer.music.load('./mario.ogg')
 	pygame.mixer.music.play(-1)
 
 	clock = pygame.time.Clock()
-	
+	print(angle)
 	while True:
 		clock.tick(60)
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				pygame.quit()
+
+			if event.type == pygame.KEYDOWN:
+				if event.key == pygame.K_ESCAPE:
+					pygame.quit()
 		screen.fill(black)
 		
-
+		
 
 		# Drawinings
 		## Stars
@@ -82,10 +88,10 @@ def main():
 			Astronaut(screen, "./yellow.png", (astronaut[0], astronaut[1]), (50, 55), angle)
 			astronaut[0] -= 1.2
 			if astronaut[0] < -100:
-				angle = random.randint(0, 45)
+				angle = random.randint(45, 90)
 				astronaut[0] = largura*4
 				astronaut[1] = random.randint(0, altura)
-		
+				print(angle)
 		for note in notes:
 			Note(screen, "./note.png", (note[0], note[1]), (21, 35))
 			
