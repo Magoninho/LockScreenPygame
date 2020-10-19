@@ -8,23 +8,6 @@ def limpa_tela():
 limpa_tela()
 
 
-class Circle:
-    def __init__(self, screen, color, center, radius):
-        self.screen = screen
-        self.color = color
-        self.center = center
-        self.radius = radius
-        pygame.draw.circle(self.screen, self.color, self.center, self.radius)
-
-
-class Rect:
-    def __init__(self, screen, color, rect):
-        self.screen = screen
-        self.color = color
-        self.rect = rect
-        pygame.draw.rect(self.screen, self.color, self.rect)
-
-
 def main():
 	pygame.init()
 	old_notes = []
