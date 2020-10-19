@@ -18,10 +18,10 @@ def main():
 	largura, altura = 1980, 1080
 
 	screen = pygame.display.set_mode((largura, altura))
-	caption = pygame.display.set_caption("ALPHA")
+	caption = pygame.display.set_caption("cool")
 
 
-	angle = random.randint(0, 60)
+	angle = random.randint(0, 45)
 
 
 	# posisão das estrelas
@@ -80,10 +80,11 @@ def main():
 				medium_star[0] = largura
 		for astronaut in astronauts:
 			Astronaut(screen, "./yellow.png", (astronaut[0], astronaut[1]), (50, 55), angle)
-			astronaut[0] -= 1
+			astronaut[0] -= 1.2
 			if astronaut[0] < -100:
-				angle = random.randint(0, 60)
-				astronaut[0] = largura
+				angle = random.randint(0, 45)
+				astronaut[0] = largura*4
+				astronaut[1] = random.randint(0, altura)
 		
 		for note in notes:
 			Note(screen, "./note.png", (note[0], note[1]), (21, 35))
