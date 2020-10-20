@@ -24,7 +24,7 @@ def main():
 
 
 	angle = random.randint(45, 90)
-
+	tamanho_astronauta = (75, 80)
 
 	# posisão das estrelas
 	## estrelas menores
@@ -87,11 +87,11 @@ def main():
 		for astronaut in astronauts:
 			
 			if color == 0:
-				Astronaut(screen, "among_us/yellow.png", (astronaut[0], astronaut[1]), (50, 55), angle)
+				Astronaut(screen, "among_us/yellow.png", (astronaut[0], astronaut[1]), tamanho_astronauta, angle)
 			elif color == 1:
-				Astronaut(screen, "among_us/cyan.png", (astronaut[0], astronaut[1]), (50, 55), angle)
+				Astronaut(screen, "among_us/cyan.png", (astronaut[0], astronaut[1]), tamanho_astronauta, angle)
 			elif color == 2:
-				Astronaut(screen, "among_us/red.png", (astronaut[0], astronaut[1]), (50, 55), angle)
+				Astronaut(screen, "among_us/red.png", (astronaut[0], astronaut[1]), tamanho_astronauta, angle)
 				
 			astronaut[0] -= 1.2
 			if astronaut[0] < -100:
@@ -101,7 +101,7 @@ def main():
 				color = random.randint(0, 2)
 		for note in notes:
 			Note(screen, "./note.png", (note[0], note[1]), (21, 35))
-			
+			print(note[0])
 
 			note[0] -= 1
 			if note[0] < -30:
