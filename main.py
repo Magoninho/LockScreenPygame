@@ -7,9 +7,9 @@ def limpa_tela():
 
 limpa_tela()
 
-
 def main():
 	pygame.init()
+	color = random.randint(0, 2)	
 	old_notes = []
 	N = 200
 	white = (255, 255, 255)
@@ -85,13 +85,20 @@ def main():
 			if medium_star[0] < 0:
 				medium_star[0] = largura
 		for astronaut in astronauts:
-			Astronaut(screen, "./yellow.png", (astronaut[0], astronaut[1]), (50, 55), angle)
+			
+			if color == 0:
+				Astronaut(screen, "among_us/yellow.png", (astronaut[0], astronaut[1]), (50, 55), angle)
+			elif color == 1:
+				Astronaut(screen, "among_us/cyan.png", (astronaut[0], astronaut[1]), (50, 55), angle)
+			elif color == 2:
+				Astronaut(screen, "among_us/red.png", (astronaut[0], astronaut[1]), (50, 55), angle)
+				
 			astronaut[0] -= 1.2
 			if astronaut[0] < -100:
 				angle = random.randint(45, 90)
-				astronaut[0] = largura*4
+				astronaut[0] = largura*1.24
 				astronaut[1] = random.randint(0, altura)
-				print(angle)
+				color = random.randint(0, 1)
 		for note in notes:
 			Note(screen, "./note.png", (note[0], note[1]), (21, 35))
 			
