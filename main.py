@@ -52,7 +52,7 @@ def main():
 	pygame.mixer.music.play(-1)
 
 	clock = pygame.time.Clock()
-	print(angle)
+
 	while True:
 		clock.tick(60)
 
@@ -101,7 +101,7 @@ def main():
 				color = random.randint(0, 2)
 		for note in notes:
 			Note(screen, "./note.png", (note[0], note[1]), (21, 35))
-			print(note[0])
+
 
 			note[0] -= 1
 			if note[0] < -30:
