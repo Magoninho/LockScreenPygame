@@ -98,7 +98,7 @@ def main():
 				angle = random.randint(45, 90)
 				astronaut[0] = largura*1.24
 				astronaut[1] = random.randint(0, altura)
-				color = random.randint(0, 1)
+				color = random.randint(0, 2)
 		for note in notes:
 			Note(screen, "./note.png", (note[0], note[1]), (21, 35))
 			
